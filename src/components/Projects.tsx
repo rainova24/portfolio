@@ -11,7 +11,8 @@ const Projects: React.FC = () => {
       status: 'In Development',
       category: 'Cultural Tech',
       color: 'from-purple-500 to-pink-600',
-      highlights: ['Traditional meets Digital', 'Cultural Preservation', 'Innovation']
+      highlights: ['Traditional meets Digital', 'Cultural Preservation', 'Innovation'],
+      detailLink: 'https://www.instagram.com/reel/DItUXEtJkpO/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==' // Tautan AngklungineX
     },
     {
       title: 'Warung Nene Rizky Electronic Transaction System',
@@ -21,7 +22,8 @@ const Projects: React.FC = () => {
       status: 'Completed',
       category: 'E-Commerce',
       color: 'from-green-500 to-teal-600',
-      highlights: ['Multi-layered Security', 'Local Business Support', 'Payment Integration']
+      highlights: ['Multi-layered Security', 'Local Business Support', 'Payment Integration'],
+      detailLink: '#' // Ganti dengan tautan yang relevan jika ada
     },
     {
       title: 'Book Recommendation Chatbot',
@@ -31,7 +33,8 @@ const Projects: React.FC = () => {
       status: 'Completed',
       category: 'AI/ML',
       color: 'from-blue-500 to-purple-600',
-      highlights: ['NLP Implementation', 'Personalization', 'User Experience']
+      highlights: ['NLP Implementation', 'Personalization', 'User Experience'],
+      detailLink: 'https://github.com/RakhaDwiPradifa/Chatbot-Recomendations-Book-NLP.git' // Tautan Book Recommendation Chatbot
     },
     {
       title: 'EcoGuard Website',
@@ -41,7 +44,8 @@ const Projects: React.FC = () => {
       status: 'Completed',
       category: 'Environmental',
       color: 'from-green-400 to-blue-500',
-      highlights: ['Environmental Focus', 'Real-time Monitoring', 'Cloud Integration']
+      highlights: ['Environmental Focus', 'Real-time Monitoring', 'Cloud Integration'],
+      detailLink: 'https://ecoguard-eight.vercel.app/' // Tautan EcoGuard
     },
     {
       title: 'Itenas Youth Innovation Platform',
@@ -51,7 +55,8 @@ const Projects: React.FC = () => {
       status: 'Completed',
       category: 'Platform',
       color: 'from-cyan-500 to-blue-600',
-      highlights: ['Full-stack Development', 'API Architecture', 'Youth Empowerment']
+      highlights: ['Full-stack Development', 'API Architecture', 'Youth Empowerment'],
+      detailLink: 'https://github.com/rainova24/iyip-platform.git' // Tautan Itenas Youth Innovation Platform
     },
     {
       title: 'KainVision: Fabric Classification System',
@@ -61,7 +66,8 @@ const Projects: React.FC = () => {
       status: 'Completed',
       category: 'Computer Vision',
       color: 'from-orange-500 to-red-600',
-      highlights: ['Texture Analysis', 'Classification AI', 'Industrial Application']
+      highlights: ['Texture Analysis', 'Classification AI', 'Industrial Application'],
+      detailLink: 'https://github.com/hasbyas1/KainVision.git' // Tautan KainVision
     },
     {
       title: 'IoT Water Level Monitoring',
@@ -71,7 +77,8 @@ const Projects: React.FC = () => {
       status: 'Completed',
       category: 'IoT',
       color: 'from-blue-400 to-indigo-600',
-      highlights: ['IoT Integration', 'Real-time Data', 'Mobile Compatibility']
+      highlights: ['IoT Integration', 'Real-time Data', 'Mobile Compatibility'],
+      detailLink: 'https://l.instagram.com/?u=https%3A%2F%2Flib.itenas.ac.id%2Femag%2FIWillCatalog2024%2Findex.html%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAad4Ng9_DfI4H0sn8j1710JC5TDaBzc_qdEfWcnJ1yC-hMRwpszqx3-cGZZigg_aem_0CPOT1Osw5pVZdzKCwFnRg&e=AT0NLNWEwsJI0UwmKItgS6sOlK9Hq0mtQWa4YRjI3ee9QzgK2geKd9kbQ8e_RbTPewQmyrZsPnERjnp1NLzCO1IzUCVzmr8QzNF2w' // Tautan IoT Water Level Monitoring
     },
     {
       title: 'BankSampah CRUD Website',
@@ -81,7 +88,8 @@ const Projects: React.FC = () => {
       status: 'Completed',
       category: 'Web Application',
       color: 'from-yellow-500 to-orange-600',
-      highlights: ['Waste Management', 'CRUD Operations', 'Community Impact']
+      highlights: ['Waste Management', 'CRUD Operations', 'Community Impact'],
+      detailLink: '#' // Ganti dengan tautan yang relevan jika ada
     },
     {
       title: 'Facial Recognition AI System',
@@ -91,7 +99,8 @@ const Projects: React.FC = () => {
       status: 'Completed',
       category: 'AI/ML',
       color: 'from-indigo-500 to-purple-600',
-      highlights: ['Facial Recognition', 'AI Training', 'Security Application']
+      highlights: ['Facial Recognition', 'AI Training', 'Security Application'],
+      detailLink: '#' // Ganti dengan tautan yang relevan jika ada
     }
   ];
 
@@ -105,7 +114,7 @@ const Projects: React.FC = () => {
   };
 
   const getCategoryColor = (category: string) => {
-    const colors = {
+    const colors: { [key: string]: string } = {
       'Cultural Tech': 'bg-purple-500/20 text-purple-300',
       'E-Commerce': 'bg-green-500/20 text-green-300',
       'AI/ML': 'bg-blue-500/20 text-blue-300',
@@ -115,7 +124,7 @@ const Projects: React.FC = () => {
       'IoT': 'bg-indigo-500/20 text-indigo-300',
       'Web Application': 'bg-yellow-500/20 text-yellow-300'
     };
-    return colors[category as keyof typeof colors] || 'bg-gray-500/20 text-gray-300';
+    return colors[category] || 'bg-gray-500/20 text-gray-300';
   };
 
   return (
@@ -132,7 +141,7 @@ const Projects: React.FC = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <div 
+            <div
               key={index}
               className="glass bg-slate-800/30 rounded-xl p-6 hover:bg-slate-800/50 transition-all duration-300 hover:transform hover:scale-105 group"
             >
@@ -177,7 +186,7 @@ const Projects: React.FC = () => {
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech, techIndex) => (
-                    <span 
+                    <span
                       key={techIndex}
                       className="px-2 py-1 bg-slate-700/50 text-gray-300 rounded text-xs"
                     >
@@ -202,10 +211,16 @@ const Projects: React.FC = () => {
 
               {/* Project Links */}
               <div className="flex gap-3">
-                <button className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-cyan-300 rounded-lg hover:from-cyan-500/30 hover:to-blue-500/30 transition-all duration-300 text-sm">
+                {/* Menggunakan tautan detailLink dari objek proyek */}
+                <a
+                  href={project.detailLink}
+                  target="_blank" // Membuka di tab baru
+                  rel="noopener noreferrer" // Praktik keamanan yang baik
+                  className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-cyan-300 rounded-lg hover:from-cyan-500/30 hover:to-blue-500/30 transition-all duration-300 text-sm"
+                >
                   <ExternalLink className="w-4 h-4" />
                   View Details
-                </button>
+                </a>
                 <button className="px-4 py-2 bg-slate-700/50 text-gray-400 rounded-lg hover:bg-slate-700/70 hover:text-white transition-all duration-300">
                   <Github className="w-4 h-4" />
                 </button>
@@ -248,17 +263,17 @@ const Projects: React.FC = () => {
             Interested in Collaboration?
           </h3>
           <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-            I'm always open to discussing new projects, innovative ideas, and opportunities to create 
+            I'm always open to discussing new projects, innovative ideas, and opportunities to create
             impactful technology solutions. Let's build something amazing together.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a 
+            <a
               href="#contact"
               className="btn-neon px-6 py-3 rounded-lg font-medium text-white transition-all duration-300 hover:shadow-lg"
             >
               Start a Conversation
             </a>
-            <a 
+            <a
               href="https://github.com/rainova24"
               target="_blank"
               rel="noopener noreferrer"
