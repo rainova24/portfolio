@@ -92,13 +92,11 @@ const Hero: React.FC = () => {
             <div className="relative">
               <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-2xl overflow-hidden animate-glow">
                 <div className="w-full h-full bg-gradient-to-br from-cyan-400/20 to-blue-600/20 glass flex items-center justify-center">
-                  <div className="text-center space-y-4">
-                    <div className="w-32 h-32 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-full mx-auto flex items-center justify-center">
-                      <span className="text-4xl font-bold text-white">R</span>
-                    </div>
-                    <p className="text-gray-300 text-sm">Professional Photo</p>
-                    <p className="text-gray-400 text-xs">Add your modern portrait here</p>
-                  </div>
+                  <img
+                    src="/rainova.jpg"
+                    alt="Rainova Rahaniawan Professional Photo"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
               <div className="absolute -inset-4 bg-gradient-to-r from-cyan-400 to-blue-600 rounded-2xl blur opacity-20 animate-pulse"></div>
